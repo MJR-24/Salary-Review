@@ -38,8 +38,12 @@ def getSSN():
 # Get retirement percentage from user
 def getPer(): 
     retPer = input("Employee "+ str(i) + ": What percentage of the salary is contributed to retirement? ")
-    while not "%" in retPer:
-        print("Please include a percent sign (%) with your response...")
+    while "%" in retPer:
+        print("Please do not include a percent sign (%) with your response...")
+        retPer = input("Employee "+ str(i) + ": What percentage of the salary is contributed to retirement? ")
+    intPer = int(retPer)
+    while intPer < 0 and intPer > 41:
+        print("Response is not between '0%' and 41%, try again...")
         retPer = input("Employee "+ str(i) + ": What percentage of the salary is contributed to retirement? ")
 
 # Get annual salary from user
