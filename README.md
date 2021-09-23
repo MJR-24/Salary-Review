@@ -1,4 +1,4 @@
-# Salary-Review
+# Salary-Review-Report
 An online salary review system for Title Boxing Club Franchisees.
 
 My goal for this project was to tabulate the salary information of up to five Title Boxing Club employees.  The user needs to input the employee’s first and last name, 
