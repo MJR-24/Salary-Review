@@ -20,7 +20,7 @@
      Retirement
      Net Salary
 
- TODO: At the bottom, note the Person with the highest salary
+ At the bottom, note the Person with the highest salary
      If statement and 2 variables: maxSalary and maxName
 '''     
 
@@ -32,18 +32,30 @@ def printTable():
     for code, sal, ret, net in zip(codeList,salList, retList, netList):
         print(str(code).ljust(14) + '$'+str(sal).ljust(11)+ '$'+str(ret).ljust(15)+ '$'+str(net)) 
 
+# Finds the employee with the highest salary
+def getMaxSalary():
+    maxSalary = max(salList)
+    maxFirstName = salList.index(maxSalary)
+    maxLastName = salList.index(maxSalary)
+    print(f"\nNOTE: {fn[maxFirstName]} {ln[maxLastName]} has the highest salary with ${maxSalary}\n")
+
 # Main
 i = 1
 codeList = []
 salList = []
 retList = []
 netList = []
+fn = []
+ln = []
 
 while i < 6:
     
 # Get employee name from user
     empName = input("Employee "+ str(i) + ": What is the employee's first and last name? ")
-    lastName = empName.split()[1]    
+    firstName = empName.split()[0]
+    lastName = empName.split()[1]
+    fn.append(firstName)
+    ln.append(lastName)
     
 # Get social security number from user
     SSNum = input("Employee "+ str(i) + ": What is the social security number? ")
@@ -111,3 +123,4 @@ retList = [float(t) for t in retList]
 netList = [float(t) for t in netList]
 print(f"{'Total'.ljust(13)} ${str((sum(salList))).ljust(10)} ${str((sum(retList))).ljust(14)} ${(sum(netList))}") 
 
+getMaxSalary()
